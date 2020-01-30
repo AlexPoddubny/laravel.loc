@@ -40,6 +40,8 @@
             <div class="content">
                 <div class="title">Page</div>
             </div>
+
         </div>
+        <?php echo '<pre>' . print_r($_ENV, true) . '</pre>';?>
     </body>
 </html>
