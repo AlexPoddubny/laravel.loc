@@ -52,6 +52,7 @@ class CoreResource extends Controller
     public function show($id)
     {
         //
+	    echo $id;
     }
 
     /**
