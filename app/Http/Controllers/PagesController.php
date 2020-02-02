@@ -13,4 +13,5 @@ class PagesController extends Controller
 	{
 		echo __METHOD__;
 	}
+	
 }
