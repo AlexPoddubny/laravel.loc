@@ -1,35 +1,43 @@
 <?php
-	
-	/*
-	|--------------------------------------------------------------------------
-	| Application Routes
-	|--------------------------------------------------------------------------
-	|
-	| Here is where you can register all of the routes for an application.
-	| It's a breeze. Simply tell Laravel the URIs it should respond to
-	| and give it the controller to call when that URI is requested.
-	|
-	*/
-	
-	
-	Route::get('/', ['as' => 'home', 'uses' => 'Admin\IndexController@show']);
-	
-	Route::get('/about/{id}', 'FirstController@show');
-	
-	Route::get('/articles', [
-		'uses' => 'Admin\Core@getArticles',
-		'as' => 'articles'
-	]);
-	
-	Route::get('/article/{page}', [
-		'middleware' => 'mymiddle',
-		'uses' => 'Admin\Core@getArticle',
-	]);//->middleware(['mymiddle']);
-	
-//	Route::resource('/pages', 'Admin\CoreResource');
-	
-//	Route::controller('/pages', 'PagesController');
-	
-	Route::group(['middleware' => ['web']], function (){
-	
-	});
+
+/*
+|--------------------------------------------------------------------------
+| Routes File
+|--------------------------------------------------------------------------
+|
+| Here is where you will register all of the routes in an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
+Route::get('/', ['as'=>'home','uses'=>'Admin\IndexController@show']);
+
+Route::get('/about',['uses'=>'Admin\AboutController@show','as'=>'about']);
+
+
+Route::get('/articles',['uses'=>'Admin\Core@getArticles','as'=>'articles']);
+
+
+Route::get('/article/{id}',['uses'=>'Admin\Core@getArticle','as'=>'article']);
+
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| This route group applies the "web" middleware group to every route
+| it contains. The "web" middleware group is defined in your HTTP
+| kernel and includes session state, CSRF protection, and more.
+|
+*/
+
+Route::group(['middleware' => ['web']], function () {
+    //
+    ////
+    
+    
+    ///
+    
+});

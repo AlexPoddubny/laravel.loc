@@ -2,7 +2,6 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\Mymiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -16,7 +15,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-//	    Mymiddleware::class,
+        //\App\Http\Middleware\Mymiddleware::class
     ];
 
     /**
@@ -48,9 +47,8 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-	    'mymiddle' => Mymiddleware::class,
+        'mymiddle'=> \App\Http\Middleware\Mymiddleware::class
     ];
 }

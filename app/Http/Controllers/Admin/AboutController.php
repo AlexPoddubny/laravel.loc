@@ -7,13 +7,15 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class IndexController extends Controller
+class AboutController extends Controller
 {
+    //
+    
     public function show() {
-		
-		if(view()->exists('default.index')) {
-			return view('default.index')->withTitle('Hello World');
+		if(view()->exists('default.about')) {
+			return view('default.about')->withTitle('Hello World');
 		}
 		abort(404);
 	}
+    
 }
