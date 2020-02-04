@@ -1,27 +1,30 @@
 <?php
-
-namespace App\Http\Controllers\Admin;
-
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-class Core extends Controller
-{
-
-    public function __construct() {
-		//$this->middleware('mymiddle');
-	}
-    
-    //list materials
-    public function getArticles() {
-		
-	}
 	
-	 //material
-    public function getArticle($id) {
+	namespace App\Http\Controllers\Admin;
+	
+	use Illuminate\Http\Request;
+	
+	use App\Http\Requests;
+	use App\Http\Controllers\Controller;
+	
+	class Core extends Controller
+	{
 		
-		echo 'Ответ - '.$id;
+		public function __construct()
+		{
+			//$this->middleware('mymiddle');
+		}
+		
+		//list materials
+		public function getArticles()
+		{
+		
+		}
+		
+		//material
+		public function getArticle($id)
+		{
+			
+			echo 'Ответ - ' . $id;
+		}
 	}
-}
