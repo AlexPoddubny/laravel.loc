@@ -19,11 +19,6 @@ class ContactController extends Controller
     */
     public function show(Request $request, $id = false)
 	{
-//		echo '<h1 style="margin-top: 100px">' .$request->name . '</h1>';
-		/*if ($request->is('contact/*')){
-			echo '<h1 style="margin-top: 100px">' . $request->path() . '</h1>';
-		}*/
-//		echo '<h1 style="margin-top: 100px">' . $request->method() . '</h1>';
 		
 	    if ($request->isMethod('post')){
 	    	return redirect()->route('contact')->withInput();
