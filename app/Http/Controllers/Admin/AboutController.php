@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class AboutController extends Controller
 {
@@ -16,10 +17,12 @@ class AboutController extends Controller
     	
 		if(view()->exists('default.about')) {
 			
-			$view = view('default.about')->withTitle('Hello World')->render();
-			return (new Response($view))->header('Content-Type','newType');
+			$articles = DB::select('SELECT * FROM `articles`');
 			
-//			return view('default.about')->withTitle('Hello World');
+			dump($articles);
+			
+			return view('default.about')->withTitle('Hello World');
+			
 		}
 		abort(404);
 	}
