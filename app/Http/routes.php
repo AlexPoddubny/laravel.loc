@@ -47,4 +47,3 @@ Route::match(['get','post'],'/contact/{name?}',['uses'=>'Admin\ContactController
 		
 		Route::get('/home', 'HomeController@index');
 	});
-

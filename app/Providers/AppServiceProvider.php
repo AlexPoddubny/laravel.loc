@@ -16,14 +16,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-	    Blade::directive('myDir', function($var){
+	    /*Blade::directive('myDir', function($var){
 	    	return "<h1>My Directive - $var</h1>";
-	    });
+	    });*/
 	    
-	    DB::listen(function ($query){
+	    /*DB::listen(function ($query){
 	    	dump($query->sql);
 //	    	dump($query->bindings);
-	    });
+	    });*/
     }
 
     /**
