@@ -1,3 +1,4 @@
+<?php dump(Session::all());?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +30,7 @@
                     <li class="active"><a href="{{ route('home') }}">Home</a>
                     </li>
                     <li><a href="{{ route('about') }}">About</a></li>
+                    <li><a href="{{ route('admin_index') }}">ADmin</a></li>
                     <li><a href="{{ route('articles') }}">Articles</a></li>
                     <li><a href="{{ route('article',['id'=>10]) }}">Article</a>
                     </li>

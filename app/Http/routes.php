@@ -33,17 +33,35 @@ Route::match(['get','post'],'/contact/{name?}',['uses'=>'Admin\ContactController
 |
 */
 
-/*Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web']], function () {
     //
     ////
     
     
     ///
     
-});*/
+});
 	
 	Route::group(['middleware' => 'web'], function () {
 		Route::auth();
 		
 		Route::get('/home', 'HomeController@index');
 	});
+	
+//	Route::auth();
+	
+	Route::group([
+			'prefix' => 'admin',
+			'middleware' => ['web', 'auth']
+		],
+		function (){
+			Route::get('/', [
+				'uses' => 'Admin\AdminController@show',
+				'as' => 'admin_index'
+			]);
+		Route::get('/add/post', [
+				'uses' => 'Admin\AdminPostController@create',
+				'as' => 'admin_add_post'
+			]);
+		}
+	);
