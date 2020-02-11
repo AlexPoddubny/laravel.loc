@@ -1,4 +1,4 @@
-<?php dump(Session::all());?>
+<?php //dump(Session::all());?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
